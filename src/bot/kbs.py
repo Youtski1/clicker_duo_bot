@@ -3,13 +3,13 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder as builder
 from os import environ
 
 
-LINK_WEB_APP = environ.get("LINK_WEB_URL")
+LINK_WEB_URL = environ.get("LINK_WEB_URL")
 
 def kb_start():
     return builder([[
         ibut(text="Профиль",switch_inline_query_current_chat="/profile"),
         ibut(text="Помощь", url="https://telegra.ph/Kak-bit-duo-08-21-2"),
-        ibut(text="Играть",url=LINK_WEB_APP)
+        ibut(text="Играть",url=f"{LINK_WEB_URL}")
     ]]).adjust(2).as_markup()
 
 
